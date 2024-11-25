@@ -1,0 +1,39 @@
+.flexRowFooter {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 24px;
+}
+
+.footerSection {
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+}
+
+.footerWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    background-color: rgba(191, 214, 255, 0.498);
+}
+
+.flexRowFooterGallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 10px;
+    margin: 36px auto;
+    width: 85%;
+}
+
+.footerSubtitle {
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0);
+    text-align: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(180deg, #4d00ff 0%, #1e1e1e 100%);
+}
+

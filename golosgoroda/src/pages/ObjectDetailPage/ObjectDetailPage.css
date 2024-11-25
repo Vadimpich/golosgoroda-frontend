@@ -1,0 +1,200 @@
+.flexColContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 18px auto;
+    width: 1280px;
+    max-width: 85%;
+}
+
+@media (max-width: 575px) {
+    .flexColContainer {
+        margin: 18px auto 80px;
+    }
+}
+
+@media (max-width: 383px) {
+    .flexColContainer {
+        margin: 18px auto 50px;
+    }
+}
+
+.flexRowContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 10px;
+}
+
+@media (max-width: 383px) {
+    .flexRowContainer {
+        -moz-column-gap: 8px;
+        column-gap: 8px;
+    }
+}
+
+.flexRowContentContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 10px;
+    margin: 74px auto;
+    width: 90.62%;
+}
+
+@media (max-width: 1199px) {
+    .flexRowContentContainer {
+        flex-direction: column;
+        gap: 30px 10px;
+    }
+}
+
+@media (max-width: 383px) {
+    .flexRowContentContainer {
+        margin: 50px auto;
+    }
+}
+
+.flexColumnTitleContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 85px 0;
+    width: 535px;
+    min-width: 0;
+}
+
+@media (max-width: 1199px) {
+    .flexColumnTitleContainer {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 575px) {
+    .flexColumnTitleContainer {
+        gap: 80px 0;
+    }
+}
+
+@media (max-width: 383px) {
+    .flexColumnTitleContainer {
+        gap: 50px 0;
+    }
+}
+
+.heroTitle {
+    font: 700 48px/1.2 "Golos Text", Helvetica, Arial, serif;
+    color: white;
+}
+
+@media (max-width: 991px) {
+    .heroTitle {
+        align-items: flex-start;
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 479px) {
+    .heroTitle {
+        font-size: 36px;
+    }
+}
+
+.contentBoxContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 49px 0 0;
+    width: 100%;
+    border-radius: 16px;
+    background-image: linear-gradient(180deg, #4d00ff 0%, #8a58ff 100%);
+}
+
+.flexColumnTitleContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 85px 0;
+    width: 535px;
+    min-width: 0;
+}
+
+@media (max-width: 1199px) {
+    .flexColumnTitleContainer {
+        width: 100%;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 575px) {
+    .flexColumnTitleContainer {
+        gap: 80px 0;
+    }
+}
+
+@media (max-width: 383px) {
+    .flexColumnTitleContainer {
+        gap: 50px 0;
+    }
+}
+
+.flexColDetailContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 50px 0;
+    margin: 95px auto;
+    width: 86%;
+    max-width: 1280px;
+}
+
+@media (max-width: 575px) {
+    .flexColDetailContainer {
+        margin: 80px auto 76px;
+    }
+}
+
+@media (max-width: 383px) {
+    .flexColDetailContainer {
+        gap: 50px 0;
+        margin: 50px auto;
+    }
+}
+
+.detailInfoHeroTitle {
+    font: 400 48px/1.2 "Golos Text", Helvetica, Arial, serif;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 991px) {
+    .detailInfoHeroTitle {
+        align-items: flex-start;
+        font-size: 44px;
+    }
+}
+
+@media (max-width: 479px) {
+    .detailInfoHeroTitle {
+        font-size: 36px;
+    }
+}
+
+.detailInfoSubtitle {
+    font: 400 20px/1.2 "Golos Text", Helvetica, Arial, serif;
+    color: black;
+}
+
+@media (max-width: 991px) {
+    .detailInfoSubtitle {
+        align-items: flex-start;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 479px) {
+    .detailInfoSubtitle {
+        font-size: 16px;
+    }
+}
+
+.objectImage {
+    width: 400px;
+    height: auto;
+    border-radius: 16px;
+}

@@ -1,0 +1,77 @@
+.promoImage {
+    background: url(../../assets/background.png) center center/cover no-repeat !important;
+    width: 85%;
+    border-radius: 100px;
+    margin: auto auto 50px;
+    max-width: 1600px;
+}
+
+.promoText {
+    width: 500px;
+    max-width: 85%;
+    margin: 20px 0;
+    font: 700 64px/1.2 "Golos Text", Helvetica, Arial, serif;
+    color: #4d00ff;
+}
+
+.cardText {
+    margin: 50px;
+    font: 700 48px/1.2 "Golos Text", Helvetica, Arial, serif;
+    color: #fff;
+}
+
+.promoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 130px 0;
+    margin: 18px auto 400px;
+    width: 85%;
+}
+
+.promoRow {
+    display: flex;
+    flex-direction: row;
+    gap: 130px 0;
+    margin: 18px auto 400px;
+    width: 85%;
+}
+
+.promoCarousel .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.promoCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin: auto auto 50px;
+    border-radius: 100px;
+    width: 85%;
+    max-width: 1600px;
+    background-image: linear-gradient(180deg, #4d00ff 0%, #8a58ff 100%);
+}
+
+.promoSubText {
+    font-size: 16px;
+    color: #555;
+}
+
+.promoCarousel .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.promoCardImage {
+    width: 40%;
+    max-width: 600px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 0 80px 80px 0;
+}
+

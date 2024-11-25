@@ -1,0 +1,56 @@
+.headerNav {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Логотип и кнопка по краям */
+    height: 100px; /* Оптимальная высота */
+    background-color: #ffffff; /* Белый фон для контраста */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Лёгкая тень для объёма */
+    position: sticky;
+    top: 0; /* Чтобы Navbar оставался сверху */
+    z-index: 1000; /* Поверх других элементов */
+    width: 100%;
+}
+
+/* Логотип */
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Пространство между логотипом */
+}
+
+.logoSym {
+    width: 24px; /* Чуть больше для читаемости */
+    height: auto;
+    object-fit: cover;
+}
+
+.logoText {
+    width: 120px; /* Логотип текста с фиксированной шириной */
+    height: auto;
+    object-fit: cover;
+}
+
+/* Кнопка */
+.headerButton {
+    display: flex;
+    align-items: center; /* Центровка текста */
+    justify-content: center;
+    width: 160px; /* Широкая кнопка */
+    height: 48px; /* Высота для кликабельности */
+    border-radius: 24px; /* Закруглённые края */
+    background-image: linear-gradient(180deg, #4d00ff 0%, #8a58ff 100%); /* Градиент для привлекательности */
+    font: 500 18px/1.2 "Golos Text", Helvetica, Arial, sans-serif; /* Современный шрифт */
+    color: #ffffff; /* Белый текст */
+    text-transform: uppercase; /* Заглавные буквы */
+    text-decoration: none; /* Убираем подчёркивание */
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Анимация для наведения */
+}
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Логотип и кнопка по краям */
+    width: 85%;
+}
