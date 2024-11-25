@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import './ObjectDetailPage.css';
 import Breadcrumbs from "../../components/BreadCrumbs/BreadCrumbs.tsx";
+import {api} from "../../modules/ObjectsAPI.tsx";
 
 interface ObjectDetail {
     name: string;
@@ -19,11 +20,7 @@ const ObjectDetailPage: React.FC = () => {
     const fetchObjectDetail = async () => {
         try {
             setLoading(true);
-            const response = await fetch(`http://localhost:8000/api/objects/${id}/`);
-            if (!response.ok) {
-                throw new Error('Ошибка при загрузке данных');
-            }
-            const data = await response.json();
+            const data = await api.getObject(id);
             setObject(data);
         } catch (error) {
             setError(error.message);
@@ -34,7 +31,7 @@ const ObjectDetailPage: React.FC = () => {
 
     useEffect(() => {
         fetchObjectDetail();
-    }, [id]); // Перезагружаем данные, если меняется ID
+    }, [id]);
 
     if (loading) {
         return <div>Загрузка...</div>;

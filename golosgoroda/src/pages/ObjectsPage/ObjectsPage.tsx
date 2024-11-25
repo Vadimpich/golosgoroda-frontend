@@ -4,6 +4,7 @@ import {motion} from 'framer-motion';
 import ObjectCard from '../../components/ObjectCard/ObjectCard.tsx';
 import './ObjectsPage.css';
 import Breadcrumbs from "../../components/BreadCrumbs/BreadCrumbs.tsx";
+import {api} from "../../modules/ObjectsAPI.tsx";
 
 interface Object {
     id: number;
@@ -17,10 +18,9 @@ const ObjectsPage: React.FC = () => {
 
     const fetchObjects = async () => {
         try {
-            const response = await fetch('http://localhost:8000/api/objects/'); // Замените на ваш API endpoint
-            const data = await response.json();
+            const data = await api.getObjects(searchTerm)
             console.log(data);
-            setObjects(data.data);
+            setObjects(data || []);
         } catch (error) {
             console.error("Ошибка при получении данных:", error);
         }
@@ -28,17 +28,12 @@ const ObjectsPage: React.FC = () => {
 
     useEffect(() => {
         fetchObjects();
-    }, []);
+    }, [searchTerm]);
 
     // Обработка изменения в поле поиска
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value);
     };
-
-    // Фильтрация объектов по названию
-    const filteredObjects = objects.filter((object) =>
-        object.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
 
     const breadcrumbPaths = [
         {label: "Главная", path: "/"},
@@ -64,10 +59,10 @@ const ObjectsPage: React.FC = () => {
                 </div>
 
                 <div className="flexRowVotingOptions">
-                    {filteredObjects.length === 0 ? (
+                    {objects.length === 0 ? (
                         <p>Ничего не найдено</p>
                     ) : (
-                        filteredObjects.map((object) => (
+                        objects.map((object) => (
                             <motion.div
                                 key={object.id}
                                 className="d-flex"
