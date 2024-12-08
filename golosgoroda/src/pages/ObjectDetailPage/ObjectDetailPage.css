@@ -198,3 +198,17 @@
     height: auto;
     border-radius: 16px;
 }
+
+@media (max-width: 575px) {
+    .objectImage {
+        width: 100%; /* Картинка займет 100% ширины контейнера */
+        max-width: 300px; /* Ограничим максимальную ширину */
+        height: auto; /* Сохраним пропорции */
+    }
+}
+
+@media (max-width: 383px) {
+    .objectImage {
+        max-width: 250px; /* Еще меньше для самых узких экранов */
+    }
+}

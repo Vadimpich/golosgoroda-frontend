@@ -54,3 +54,65 @@
     justify-content: space-between; /* Логотип и кнопка по краям */
     width: 85%;
 }
+
+/* Бургер-меню */
+.burgerMenu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    cursor: pointer;
+}
+
+.burgerLine {
+    width: 30px;
+    height: 3px;
+    background-color: #4d00ff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.navLinks.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .burgerMenu {
+        display: flex;
+    }
+
+    .navLinks {
+        display: none; /* По умолчанию скрыто */
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 20px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logoSym {
+        width: 18px; /* Чуть больше для читаемости */
+        height: auto;
+        object-fit: cover;
+    }
+
+    .logoText {
+        width: 90px; /* Логотип текста с фиксированной шириной */
+        height: auto;
+        object-fit: cover;
+    }
+}

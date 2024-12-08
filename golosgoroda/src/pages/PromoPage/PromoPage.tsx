@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './PromoPage.css';
 import '../../styles/common.css';
-import { Container } from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import metroImage from '../../assets/metro.jpg';
 import moscowImage from '../../assets/moscow.jpg';
@@ -46,13 +46,13 @@ const PromoPage: React.FC = () => {
 
                 <Container>
                     <motion.div
-                        className="d-flex promoCard"
+                        className="promoCard"
                         variants={cardVariants}
-                        custom={1} // Индекс для последовательной анимации
+                        custom={1}
                         initial="hidden"
                         animate="visible"
                     >
-                        <div className="d-flex flex-column justify-content-center">
+                        <div className="promoCardText">
                             <h2 className="cardText">
                                 Голосуйте за названия улиц, парков, станций метро и других объектов!
                             </h2>
@@ -65,15 +65,16 @@ const PromoPage: React.FC = () => {
                     </motion.div>
                 </Container>
 
+
                 <Container>
                     <motion.div
-                        className="d-flex promoCard"
+                        className="promoCard"
                         variants={cardVariants}
-                        custom={2} // Индекс для последовательной анимации
+                        custom={2}
                         initial="hidden"
                         animate="visible"
                     >
-                        <div className="d-flex flex-column justify-content-center">
+                        <div className="promoCardText">
                             <h2 className="cardText">
                                 Каждое решение приближает нас к лучшему городу!
                             </h2>

@@ -1,39 +1,80 @@
-.flexRowFooter {
-    display: flex;
-    justify-content: space-between;
-    gap: 0 24px;
-}
-
+/* Общие стили футера */
 .footerSection {
     display: flex;
     flex-direction: column;
     min-height: 120px;
+    background-color: rgba(191, 214, 255, 0.498);
+    padding: 20px 0;
 }
 
 .footerWrapper {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 100%;
-    background-color: rgba(191, 214, 255, 0.498);
+    width: 85%;
+    max-width: 1600px;
 }
 
+/* Контейнер для логотипа и ссылок */
 .flexRowFooterGallery {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 0 10px;
-    margin: 36px auto;
-    width: 85%;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
 }
 
-.footerSubtitle {
+/* Ряд внутри футера */
+.flexRowFooter {
     display: flex;
     align-items: center;
+    gap: 16px;
+}
+
+/* Стили текста */
+.footerSubtitle {
+    font-size: 18px;
     color: rgba(0, 0, 0, 0);
     text-align: center;
     -webkit-background-clip: text;
     background-clip: text;
     background-image: linear-gradient(180deg, #4d00ff 0%, #1e1e1e 100%);
+    margin: 0;
 }
 
+/* Стили изображений */
+.footerImage {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+.footerImage.animated:hover {
+    transform: scale(1.2);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .flexRowFooterGallery {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .flexRowFooter {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .footerSubtitle {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .footerImage {
+        width: 28px;
+        height: 28px;
+    }
+}

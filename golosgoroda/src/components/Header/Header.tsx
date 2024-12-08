@@ -5,7 +5,7 @@ import { Navbar, Button } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import logoSym from '../../assets/logo_sym.png';
 import logoText from '../../assets/logo_text.png';
-import React from "react";
+import React, { useState } from 'react';
 
 const buttonVariants = {
     hover: { scale: 1.1, transition: { duration: 0.3 } },
@@ -13,6 +13,10 @@ const buttonVariants = {
 };
 
 const Header: React.FC = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
     return (
         <Navbar className="d-flex sticky-top page-header headerNav">
             <div className="navContainer">
@@ -34,13 +38,24 @@ const Header: React.FC = () => {
                         transition={{ duration: 0.5, delay: 0.3 }}
                     />
                 </Navbar.Brand>
-                <motion.div whileHover="hover" whileTap="tap" variants={buttonVariants}>
-                    <Link to="/objects" className="headerButton">
-                        <Button>
-                            Объекты
-                        </Button>
-                    </Link>
 
+                {/* Бургер-меню для мобильных устройств */}
+                <div className="burgerMenu" onClick={toggleMenu}>
+                    <span className="burgerLine"></span>
+                    <span className="burgerLine"></span>
+                    <span className="burgerLine"></span>
+                </div>
+
+                {/* Навигация */}
+                <motion.div
+                    whileHover="hover"
+                    whileTap="tap"
+                    variants={buttonVariants}
+                    className={`navLinks ${isMenuOpen ? "open" : ""}`}
+                >
+                    <Link to="/objects">
+                        <Button className="headerButton">Объекты</Button>
+                    </Link>
                 </motion.div>
             </div>
         </Navbar>
