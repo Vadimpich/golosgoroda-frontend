@@ -20,10 +20,17 @@ const ObjectDetailPage: React.FC = () => {
     const fetchObjectDetail = async () => {
         try {
             setLoading(true);
+            if (!id) {
+                throw new Error('ID is undefined');
+            }
             const data = await api.getObject(id);
             setObject(data);
         } catch (error) {
-            setError(error.message);
+                if (error instanceof Error) {
+                    setError(error.message);
+                } else {
+                    console.error('Неизвестная ошибка:', error);
+                }
         } finally {
             setLoading(false);
         }

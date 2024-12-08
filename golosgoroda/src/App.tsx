@@ -7,7 +7,7 @@ import ObjectDetailPage from "./pages/ObjectDetailPage/ObjectDetailPage.tsx";
 
 function App() {
   return (
-    <Router>
+    <Router basename='/golosgoroda-frontend'>
       <div className="d-flex flex-column min-vh-100">
           <Header/>
           <Routes>

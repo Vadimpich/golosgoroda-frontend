@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import './PromoPage.css';
 import '../../styles/common.css';
 import { Container } from 'react-bootstrap';

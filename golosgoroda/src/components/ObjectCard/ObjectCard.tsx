@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import './ObjectCard.css'; // Подключите стили
-import plusImage from '../../assets/plus.svg';
+// import plusImage from '../../assets/plus.svg';
 
 interface Object {
     id: number;

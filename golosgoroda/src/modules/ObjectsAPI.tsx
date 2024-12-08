@@ -14,7 +14,9 @@ export const api = {
             params.object_name = searchQuery;
         }
 
-        const queryString = new URLSearchParams(params).toString();
+        const queryString = new URLSearchParams(
+            Object.entries(params).map(([key, value]) => [key, value ?? ""])
+        ).toString();
         const url = `${API_PREFIX}objects/?${queryString}`;
 
         try {
@@ -32,7 +34,11 @@ export const api = {
             const data = await response.json();
             return data.data;
         } catch (error) {
-            console.error("Ошибка получения данных с сервера:", error.message);
+            if (error instanceof Error) {
+                console.error("Ошибка получения данных с сервера:", error.message);
+            } else {
+                console.error("Неизвестная ошибка:", error);
+            }
             console.warn("Возвращаем данные из mock-объектов");
 
             const filteredMocks = searchQuery
@@ -66,7 +72,11 @@ export const api = {
             const data = await response.json();
             return data;
         } catch (error) {
-            console.error("Ошибка получения данных с сервера:", error.message);
+            if (error instanceof Error) {
+                console.error("Ошибка получения данных с сервера:", error.message);
+            } else {
+                console.error("Неизвестная ошибка:", error);
+            }
             console.warn("Возвращаем данные из mock-объектов.");
 
             // Если ошибка при запросе, ищем в mock-данных по id

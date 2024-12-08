@@ -35,9 +35,12 @@ const Header: React.FC = () => {
                     />
                 </Navbar.Brand>
                 <motion.div whileHover="hover" whileTap="tap" variants={buttonVariants}>
-                    <Button as={Link} to={'/objects'} className="headerButton">
-                        Объекты
-                    </Button>
+                    <Link to="/objects" className="headerButton">
+                        <Button>
+                            Объекты
+                        </Button>
+                    </Link>
+
                 </motion.div>
             </div>
         </Navbar>
