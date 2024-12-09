@@ -9,13 +9,13 @@
 - **Подробная информация** — пользователи могут просмотреть подробную информацию о выбранном объекте, включая описание и изображение.
 
 ## Ссылки
-### [GitHub Pages](https://vadimpich.github.io/golosgoroda-frontend/)
 ### Backend:
 - [SSR с mock-данными](https://github.com/Vadimpich/golosgoroda-backend/tree/ssr)
 - [Модели и Django-ORM](https://github.com/Vadimpich/golosgoroda-backend/tree/orm)
 - [REST API](https://github.com/Vadimpich/golosgoroda-backend/tree/rest)
 - [Пользователи и авторизация](https://github.com/Vadimpich/golosgoroda-backend/tree/auth)
 ### Frontend:
+- [GitHub Pages](https://vadimpich.github.io/golosgoroda-frontend/)
 
 ## Стек технологий
 
