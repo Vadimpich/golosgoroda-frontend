@@ -20,7 +20,7 @@ export default defineConfig({
             cert: fs.readFileSync(path.resolve(__dirname, 'cert.crt')),
         },
     },
-    base: '/golosgoroda-frontend',
+    base: '',
     plugins: [
         react(),
         mkcert(),
@@ -31,14 +31,14 @@ export default defineConfig({
           manifest: {
             "name": "Golos Goroda",
             "short_name": "Golos Goroda",
-            "start_url": "/golosgoroda-frontend/",
+            "start_url": "/",
             "display": "standalone",
             "background_color": "#fdfdfd",
             "theme_color": "#4d00ff",
             "orientation": "portrait-primary",
             "icons": [
               {
-                "src": "/golosgoroda-frontend/logo192.png",
+                "src": "/logo192.png",
                 "type": "image/png", "sizes": "192x192"
               }
             ]
