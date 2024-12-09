@@ -5,6 +5,9 @@ import ObjectCard from '../../components/ObjectCard/ObjectCard.tsx';
 import './ObjectsPage.css';
 import Breadcrumbs from "../../components/BreadCrumbs/BreadCrumbs.tsx";
 import {api} from "../../modules/ObjectsAPI.tsx";
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState, AppDispatch } from '../../store';
+import { setSearchTerm } from '../../searchSlice.ts';
 
 interface Object {
     id: number;
@@ -14,7 +17,8 @@ interface Object {
 
 const ObjectsPage: React.FC = () => {
     const [objects, setObjects] = useState<Object[]>([]);
-    const [searchTerm, setSearchTerm] = useState<string>('');
+    const searchTerm = useSelector((state: RootState) => state.search.searchTerm);
+    const dispatch: AppDispatch = useDispatch();
 
     const fetchObjects = async () => {
         try {
@@ -32,7 +36,7 @@ const ObjectsPage: React.FC = () => {
 
     // Обработка изменения в поле поиска
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchTerm(e.target.value);
+        dispatch(setSearchTerm(e.target.value));
     };
 
     const breadcrumbPaths = [

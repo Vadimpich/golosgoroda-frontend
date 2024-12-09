@@ -16,7 +16,14 @@ input {
     margin: 64px;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 1280px) {
+    .flexRowVotingOptions {
+        grid-template-columns: repeat(2, 1fr); /* Одна колонка на мобильных устройствах */
+    }
+}
+
+
+@media (max-width: 620px) {
     .flexRowVotingOptions {
         grid-template-columns: 1fr; /* Одна колонка на мобильных устройствах */
         gap: 20px; /* Уменьшить промежутки между карточками */
