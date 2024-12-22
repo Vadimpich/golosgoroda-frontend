@@ -7,7 +7,7 @@ import Breadcrumbs from "../../components/BreadCrumbs/BreadCrumbs.tsx";
 import {api} from "../../modules/ObjectsAPI.tsx";
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../../store';
-import { setSearchTerm } from '../../searchSlice.ts';
+import { setObjectName } from '../../objectNameSlice.ts';
 
 interface Object {
     id: number;
@@ -17,12 +17,12 @@ interface Object {
 
 const ObjectsPage: React.FC = () => {
     const [objects, setObjects] = useState<Object[]>([]);
-    const searchTerm = useSelector((state: RootState) => state.search.searchTerm);
+    const objectName = useSelector((state: RootState) => state.object_name.objectName);
     const dispatch: AppDispatch = useDispatch();
 
     const fetchObjects = async () => {
         try {
-            const data = await api.getObjects(searchTerm)
+            const data = await api.getObjects(objectName)
             console.log(data);
             setObjects(data || []);
         } catch (error) {
@@ -32,11 +32,11 @@ const ObjectsPage: React.FC = () => {
 
     useEffect(() => {
         fetchObjects();
-    }, [searchTerm]);
+    }, [objectName]);
 
     // Обработка изменения в поле поиска
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        dispatch(setSearchTerm(e.target.value));
+        dispatch(setObjectName(e.target.value));
     };
 
     const breadcrumbPaths = [
@@ -56,7 +56,7 @@ const ObjectsPage: React.FC = () => {
                             type="text"
                             name="object_name"
                             placeholder="Поиск..."
-                            value={searchTerm}
+                            value={objectName}
                             onChange={handleSearchChange}
                         />
                     </form>
